@@ -38,6 +38,7 @@ public class WordSearchTest {
         String[] words = {"goku", "krilin", "cell", "piccoro", "videl", "yamcha","broli","vegeta",  "gohan","bulma",  "roshi", "freezer"};
 
         int[] indices;
+        // ASSERT
         for (String word : words) {
             indices = wordSearch.find(word);
             assertFalse(Arrays.equals(WORD_NOT_FOUND, indices), word);
@@ -49,6 +50,8 @@ public class WordSearchTest {
     public void testFindGoku(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesGoku = wordSearch.find("goku");
         // ASSERT
         assertArrayEquals(new int[]{8, 8}, indicesGoku);
@@ -58,7 +61,10 @@ public class WordSearchTest {
     public void testFindKrilin(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesKrilin = wordSearch.find("krilin");
+
         // ASSERT
         assertArrayEquals(new int[]{9, 0}, indicesKrilin);
     }
@@ -67,7 +73,10 @@ public class WordSearchTest {
     public void testFindCell(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesCell = wordSearch.find("cell");
+
         // ASSERT
         assertArrayEquals(new int[]{6, 18}, indicesCell);
     }
@@ -76,7 +85,10 @@ public class WordSearchTest {
     public void testFindPiccoro(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesPiccoro = wordSearch.find("piccoro");
+
         // ASSERT
         assertArrayEquals(new int[]{0, 19}, indicesPiccoro);
     }
@@ -85,6 +97,8 @@ public class WordSearchTest {
     public void testFindVidel(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesVidel = wordSearch.find("videl");
         // ASSERT
         assertArrayEquals(new int[]{0, 11}, indicesVidel);
@@ -94,6 +108,8 @@ public class WordSearchTest {
     public void testFindYamcha(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesYamcha = wordSearch.find("yamcha");
         // ASSERT
         assertArrayEquals(new int[]{9, 16}, indicesYamcha);
@@ -103,6 +119,8 @@ public class WordSearchTest {
     public void testFindBroli(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+        
+        // ACT
         int[] indicesBroli = wordSearch.find("broli");
         // ASSERT
         assertArrayEquals(new int[]{6, 8}, indicesBroli);
@@ -112,6 +130,8 @@ public class WordSearchTest {
     public void testFindVegeta(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+        
+        // ACT
         int[] indicesVegeta = wordSearch.find("vegeta");
         // ASSERT
         assertArrayEquals(new int[]{0, 7}, indicesVegeta);
@@ -121,6 +141,8 @@ public class WordSearchTest {
     public void testFindGohan(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesGohan = wordSearch.find("gohan");
         // ASSERT
         assertArrayEquals(new int[]{0, 1}, indicesGohan);
@@ -130,6 +152,8 @@ public class WordSearchTest {
     public void testFindBulma(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesBulma = wordSearch.find("bulma");
         // ASSERT
         assertArrayEquals(new int[]{6, 8}, indicesBulma);
@@ -139,6 +163,8 @@ public class WordSearchTest {
     public void testFindRoshi(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesRoshi = wordSearch.find("roshi");
         // ASSERT
         assertArrayEquals(new int[]{8, 7}, indicesRoshi);
@@ -148,6 +174,8 @@ public class WordSearchTest {
     public void testFindFreezer(){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
+
+        // ACT
         int[] indicesFreezer = wordSearch.find("freezer");
         // ASSERT
         assertArrayEquals(new int[]{9, 1}, indicesFreezer);
