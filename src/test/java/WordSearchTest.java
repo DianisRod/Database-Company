@@ -37,10 +37,9 @@ public class WordSearchTest {
         // ACT
         String[] words = {"goku", "krilin", "cell", "piccoro", "videl", "yamcha","broli","vegeta",  "gohan","bulma",  "roshi", "freezer"};
 
-        int[] indices;
         // ASSERT
         for (String word : words) {
-            indices = wordSearch.find(word);
+            int[] indices = wordSearch.find(word);
             assertFalse(Arrays.equals(WORD_NOT_FOUND, indices), word);
             System.out.println(word + " found at: " + Arrays.toString(indices));
         }
@@ -48,137 +47,71 @@ public class WordSearchTest {
 
     @Test
     public void testFindGoku(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesGoku = wordSearch.find("goku");
-        // ASSERT
-        assertArrayEquals(new int[]{8, 8}, indicesGoku);
+        testCorrectIndices(new int[]{8, 8}, "goku");
     }
 
     @Test
     public void testFindKrilin(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesKrilin = wordSearch.find("krilin");
-
-        // ASSERT
-        assertArrayEquals(new int[]{9, 0}, indicesKrilin);
+        testCorrectIndices(new int[]{9, 0}, "krilin");
     }
 
     @Test
     public void testFindCell(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesCell = wordSearch.find("cell");
-
-        // ASSERT
-        assertArrayEquals(new int[]{6, 18}, indicesCell);
+        testCorrectIndices(new int[]{6, 18}, "cell");
     }
 
     @Test
     public void testFindPiccoro(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesPiccoro = wordSearch.find("piccoro");
-
-        // ASSERT
-        assertArrayEquals(new int[]{0, 19}, indicesPiccoro);
+        testCorrectIndices(new int[]{0, 19}, "piccoro");
     }
 
     @Test
     public void testFindVidel(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesVidel = wordSearch.find("videl");
-        // ASSERT
-        assertArrayEquals(new int[]{0, 11}, indicesVidel);
+        testCorrectIndices(new int[]{0, 11}, "videl");
     }
 
     @Test
     public void testFindYamcha(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesYamcha = wordSearch.find("yamcha");
-        // ASSERT
-        assertArrayEquals(new int[]{9, 16}, indicesYamcha);
+        testCorrectIndices(new int[]{9, 16}, "yamcha");
     }
 
     @Test
     public void testFindBroli(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-        
-        // ACT
-        int[] indicesBroli = wordSearch.find("broli");
-        // ASSERT
-        assertArrayEquals(new int[]{6, 8}, indicesBroli);
+        testCorrectIndices(new int[]{6, 8}, "broli");
     }
 
     @Test
     public void testFindVegeta(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-        
-        // ACT
-        int[] indicesVegeta = wordSearch.find("vegeta");
-        // ASSERT
-        assertArrayEquals(new int[]{0, 7}, indicesVegeta);
+        testCorrectIndices(new int[]{0, 7}, "vegeta");
     }
 
     @Test
     public void testFindGohan(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesGohan = wordSearch.find("gohan");
-        // ASSERT
-        assertArrayEquals(new int[]{0, 1}, indicesGohan);
+        testCorrectIndices(new int[]{0, 1}, "gohan");
     }
 
     @Test
     public void testFindBulma(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesBulma = wordSearch.find("bulma");
-        // ASSERT
-        assertArrayEquals(new int[]{6, 8}, indicesBulma);
+        testCorrectIndices(new int[]{6, 8}, "bulma");
     }
 
     @Test
     public void testFindRoshi(){
-        // ARRANGE
-        WordSearch wordSearch = new WordSearch(GRID);
-
-        // ACT
-        int[] indicesRoshi = wordSearch.find("roshi");
-        // ASSERT
-        assertArrayEquals(new int[]{8, 7}, indicesRoshi);
+        testCorrectIndices(new int[]{8, 7}, "roshi");
     }
 
     @Test
     public void testFindFreezer(){
+        testCorrectIndices(new int[]{9, 1}, "freezer");
+    }
+
+    private void testCorrectIndices(int[] expectedIndices, String word){
         // ARRANGE
         WordSearch wordSearch = new WordSearch(GRID);
-
         // ACT
-        int[] indicesFreezer = wordSearch.find("freezer");
+        int[] indices = wordSearch.find(word);
         // ASSERT
-        assertArrayEquals(new int[]{9, 1}, indicesFreezer);
+        assertArrayEquals(expectedIndices, indices);
     }
 
 }
