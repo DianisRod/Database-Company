@@ -19,7 +19,28 @@ public class SubArrayTest {
     }
 
     @Test
-    public void find2dSubarrayTest(){
+    public void findSubarrayIn2dArrayTest(){
+        int[][] array = {
+                {34, 7, 23, 32, 5, 62, 78},
+                {45, 12, 89, 56, 90, 11, 67},
+                {24, 88, 73, 54, 31, 19, 40},
+                {99, 21, 18, 76, 43, 55, 66},
+                {81, 39, 28, 14, 92, 33, 50},
+                {60, 25, 47, 13, 70, 85, 22}
+        };
+
+        int[] subarray = {54, 31, 19};
+        int[] notSubArray = {8, 9, 10};
+
+        boolean positivesErgebnis = SubArray.findSubarrayIn2dArray(array, subarray);
+        boolean negativesErgebnis = SubArray.findSubarrayIn2dArray(array, notSubArray);
+
+        assertTrue(positivesErgebnis);
+        assertFalse(negativesErgebnis);
+    }
+
+    @Test
+    public void find2dSubarrayIn2dArrayTest(){
         int[][] array = {
                 {34, 7, 23, 32, 5, 62, 78},
                 {45, 12, 89, 56, 90, 11, 67},
@@ -41,8 +62,8 @@ public class SubArrayTest {
             {18, 19, 20}
         };
 
-        boolean positivesErgebnis = SubArray.finde2dSubArray(array, subArray);
-        boolean negativesErgebnis = SubArray.finde2dSubArray(array, notSubArray);
+        boolean positivesErgebnis = SubArray.find2dSubarrayIn2dArray(array, subArray);
+        boolean negativesErgebnis = SubArray.find2dSubarrayIn2dArray(array, notSubArray);
 
         assertTrue(positivesErgebnis);
         assertFalse(negativesErgebnis);
