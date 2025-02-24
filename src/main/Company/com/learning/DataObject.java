@@ -1,16 +1,31 @@
+package com.learning;
+
+import java.sql.Connection;
+
 public class DataObject {
 
+    Connection conn = Database.dbConnection();
+
+    private int perNr;
     private String firstName;
     private String lastName;
     private int age;
     private String email;
 
-
-    public DataObject(String firstName, String lastName, int age, String email){
+    public DataObject(int perNr,String firstName, String lastName, int age, String email){
+        this.perNr = perNr;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
+    }
+
+    public int getPerNr() {
+        return perNr;
+    }
+
+    public void setPerNr(int perNr){
+        this.perNr = perNr;
     }
 
     public String getFirstName() {

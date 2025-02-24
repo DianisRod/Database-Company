@@ -1,11 +1,9 @@
-public class Output {
-    private String data;
+package com.learning;
 
-    public Output(String data){
-        this.data = data;
-    }
+import java.util.List;
 
-    private void display(){
-        System.out.println(data);
+abstract class Output {
+
+    public void display(List<DataObject> data){
     }
 }
