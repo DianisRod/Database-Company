@@ -1,13 +1,12 @@
 package com.learning;
 
+import java.sql.SQLException;
+
 public class main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
         DataManager datamanager = new DataManager();
-
-        datamanager.setData(1,"Alice", "Romo", 25, "alice.rom@gmail,com");
-        datamanager.setData(2, "juan", "Müller", 45, "juan.M@gmail,com");
-        datamanager.setData(3, "Alan", "Jesuita", 78, "jesu.Ala@gmail,com");
+        datamanager.getDataForPerNr();
 
         System.out.println(" ");
         datamanager.displayData("text");
@@ -16,7 +15,6 @@ public class main {
 
         System.out.println(" ");
         System.out.println(" Data from Database ");
-        Database.dbConnection();
 
 
     }

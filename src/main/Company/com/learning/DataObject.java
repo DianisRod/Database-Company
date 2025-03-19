@@ -4,9 +4,9 @@ import java.sql.Connection;
 
 public class DataObject {
 
-    Connection conn = Database.dbConnection();
+    Connection conn = Database.getConnection();
 
-    private int perNr;
+    private int PerNr;
     private String firstName;
     private String lastName;
     private int age;
@@ -17,8 +17,8 @@ public class DataObject {
     private String beginDate;
     private String endDate;
 
-    public DataObject(int perNr,String firstName, String lastName, int age, String email){
-        this.perNr = perNr;
+    public DataObject(int PerNr,String firstName, String lastName, int age, String email){
+        this.PerNr = PerNr;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -58,11 +58,11 @@ public class DataObject {
     }
 
     public int getPerNr() {
-        return perNr;
+        return PerNr;
     }
 
     public void setPerNr(int perNr){
-        this.perNr = perNr;
+        this.PerNr = perNr;
     }
 
     public String getFirstName() {
