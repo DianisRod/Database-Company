@@ -42,14 +42,11 @@ public class Database {
 
     //create getInstance function . Inside
     public static Database getInstance() throws SQLException{
-        if (instance != null && !instance.getConnection().isClosed()) {
-            return instance;
-        }
-        else {
+        if (instance == null || instance.getConnection().isClosed()) {
             instance = new Database();
             instance.init();
-            return  instance;
         }
+            return  instance;
     }
 
     //run the command
