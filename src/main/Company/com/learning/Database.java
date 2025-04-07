@@ -13,8 +13,8 @@ public class Database {
 
     private static final String sqlUsername ="Admin";
     private static final String sqlPasswort = "LFhkrDabldN]a5m[";
-    private static final String sqlUrl = "jdbc:mysql://localhost:3306/companytest";
-    // private static final String sqlUrl = "jdbc:mysql://localhost:3306/companytest?useSSL=false&allowPublicKeyRetrieval=true";
+    //private static final String sqlUrl = "jdbc:mysql://localhost:3306/companytest";
+    private static final String sqlUrl = "jdbc:mysql://localhost:3306/companytest?useSSL=false&allowPublicKeyRetrieval=true";
 
 
     //create constructor:

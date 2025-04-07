@@ -8,14 +8,15 @@ public class main {
 
     public static void main(String[] args) throws SQLException {
         showDatainDB();
-        //datamanager.getDatafromFortyHoursWorkers();
-        //datamanager.getEmployesThatStartedAfter2022();
+        datamanager.getDatafromFortyHoursWorkers();
+        datamanager.getEmployesThatStartedAfter2022();
+        datamanager.CountElements( "company");
         //createNewEmploye();
-        // datamanager.DeleteOldestEmployer();
+        //datamanager.DeleteOldestEmployer();
 
     }
     public static void createNewEmploye() throws SQLException {
-        datamanager.createData("Jhon", "Lotte", 44, "Jhon.Lot@hotmail.com");
+        datamanager.createData("Jhon", "Lotte", 90, "Jhon.Lot@hotmail.com");
 
     }
 

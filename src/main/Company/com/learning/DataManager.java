@@ -127,13 +127,17 @@ public class DataManager {
         }
     }
 
+    //TODO: Please write a SQL statement, which increases the bonus by 500€ in the salary table for all
+    //employees, who are working 40 hours.
+    //
+
 
     public void getEmployesThatStartedAfter2022() throws SQLException {
         clearList();
         Statement statement = connection.createStatement();
         System.out.println("employees who have started 2020 or later to work for the company:");
         System.out.printf("%-15s %-15s %-25s %-25s%n", "name", "lastname", "email", "BeginDate");
-        String sql = "SELECT C.firstName, C.Lastname, C.email, W.BeginDate from company AS C JOIN WorkingTime W on W.PerNr = C.PerNr WHERE Year(BeginDate) BETWEEN 2022 AND 2025;";
+        String sql = "SELECT C.firstName, C.Lastname, C.email, W.BeginDate from company AS C JOIN WorkingTime W on W.PerNr = C.PerNr WHERE Year(BeginDate) >= 2022 ;";
         ResultSet cw = statement.executeQuery(sql);
         while (cw.next()) {
             System.out.printf("%-15s %-15s %-25s %-25s%n", cw.getString(1), cw.getString(2), cw.getString(3), cw.getString(4));
@@ -150,6 +154,17 @@ public class DataManager {
         }
     }
 
-
+    public int CountElements(String tableName) throws SQLException {
+        clearList();
+        Statement countStatement = connection.createStatement();
+        String sql = "SELECT (COUNT(*)) from " + tableName;
+        ResultSet counter = countStatement.executeQuery(sql);
+        int counts = 0;
+        while (counter.next()) {
+            counts = counter.getInt(1);
+            System.out.println(counts);
+        }
+        return counts;
+    }
 }
 
