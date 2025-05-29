@@ -1,8 +1,8 @@
 package com.learning;
 
-import javax.xml.crypto.Data;
 import java.sql.*;
 
+//singleton is a creational Pattern
 public class Database {
 
     //create a singleton instance

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewPort">
+    <link rel="stylesheet" href="style.css">
+    <title> Formular for Onboarding </title>
+</head>
+<body>
+        <h1 id="welcomeMessage"></h1>
+        <script src="../js/script.js"></script>
+</body>
+<div>
+    <h3> please fill all the formular</h3>
+    <body>
+    <form id="userForm" action="welcome.html" method="POST">
+        <label for="position">Position:</label><br>
+        <select name=position" id="position">
+            <option value = WebEntwickler> Web-Entwickler*in </option>
+            <option value = BiEntwickler> BI-Entwickler*in </option>
+            <option value = TeamLeader> TeamLeader </option>
+            <option value = TechnicalDeveloper> Technical Developer </option>
+            <option value = UIDesigner> UI-Designer*in </option>
+        </select><br>
+        <label for="Begin_DatetimeLocal">Begin Date:</label><br>
+        <input type="datetime-local" id="Begin_DatetimeLocal"><br><br>
+        <label for="End_DatetimeLocal">End Date:</label><br>
+        <input type="datetime-local" id="End_DatetimeLocal"><br><br>
+        <label for="WorkTime">Work Time:</label><br>
+        <select id="WorkTime" name="WorkTime">
+            <option value="40"> Vollzeit </option>
+            <option value="30"> Teilzeit </option>
+        </select>
+        <input type="submit" value="Done"/>
+    </form>
+    </body>
+</div>
+</html>
